@@ -10,3 +10,4 @@
 | GET | `/api/shopfloor/dashboard` | 需求计划员工作台 |
 | POST | `/api/shopfloor/work-orders/{id}/reports` | 提交业务修正 |
 | POST | `/api/shopfloor/ai-preview` | 调用可替换预测 AI Provider |
+| POST | `/api/shopfloor/forecast-scenario` | 计算基线、下行情景、上行情景与业务复核建议 |
