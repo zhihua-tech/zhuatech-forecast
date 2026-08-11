@@ -45,3 +45,7 @@ npm run dev:demo
 | ![知华科技微信咨询二维码一](docs/images/zhuatech-wechat-consulting.png) | ![知华科技微信咨询二维码二](docs/images/zhuatech-wechat-consulting-2.png) |
 
 SEO 关键词：需求预测系统源码、AI 预测平台、S&OP、库存优化、Forecast Value Add、Java 预测系统、知华科技。
+
+## 预测偏差监控
+
+新增 `POST /api/forecast/insights/bias-monitor`，按周期计算预测偏差、MAPE 和持续高估次数，输出 `STABLE`、`WATCH` 或 `RECALIBRATE` 及参数调整建议。
