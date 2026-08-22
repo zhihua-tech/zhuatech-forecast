@@ -1,4 +1,4 @@
-/* Copyright 2026 上海如静知华信息科技有限公司 */
+/* Copyright 2026 上海如静知华信息科技有限公司 · https://www.zhuatech.cn/ */
 package cn.zhuatech.forecast.model;
 import jakarta.persistence.*; import java.time.LocalDate;
 @Entity @Table(name="forecast_work_record") public class WorkRecord extends BaseEntity {
