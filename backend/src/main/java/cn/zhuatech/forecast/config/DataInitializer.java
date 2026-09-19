@@ -1,7 +1,13 @@
 /* Copyright 2026 上海如静知华信息科技有限公司 · https://www.zhuatech.cn/ */
 package cn.zhuatech.forecast.config;
 import cn.zhuatech.forecast.model.*; import cn.zhuatech.forecast.repository.*; import org.springframework.boot.CommandLineRunner; import org.springframework.context.annotation.*; import org.springframework.security.crypto.password.PasswordEncoder; import java.time.LocalDate; import java.util.List;
-@Configuration public class DataInitializer {@Bean CommandLineRunner seed(OperatingUnitRepository units,WorkRecordRepository records,ResourceRegisterRepository resources,ReviewRecordRepository reviews,UserRepository users,PasswordEncoder encoder){return args->{if(units.count()>0)return;
+/**
+ * 商业授权或定制开发请微信添加微信号zhuatech或zhuatech2进行咨询。
+ */
+@Configuration public class DataInitializer {/**
+                                              * 商业授权或定制开发请微信添加微信号zhuatech或zhuatech2进行咨询。
+                                              */
+@Bean CommandLineRunner seed(OperatingUnitRepository units,WorkRecordRepository records,ResourceRegisterRepository resources,ReviewRecordRepository reviews,UserRepository users,PasswordEncoder encoder){return args->{if(units.count()>0)return;
  OperatingUnit east=units.save(new OperatingUnit("FCST-EAST","华东零售计划单元","现代渠道",9000)),ec=units.save(new OperatingUnit("FCST-EC","全国电商计划单元","电商渠道",6000)),south=units.save(new OperatingUnit("FCST-SOUTH","华南零售计划单元","传统渠道",3000));
  WorkRecord a=records.save(new WorkRecord("FCST-260801-031","CAT-BEVERAGE-EAST","华东饮品 8 月滚动预测",east,4280,3972,86,LocalDate.now().plusDays(1),WorkRecord.Status.RUNNING,"ENSEMBLE-V5.1")); WorkRecord b=records.save(new WorkRecord("FCST-260801-028","CAT-PERSONAL-CARE","全国个护促销情景预测",ec,2360,2360,18,LocalDate.now(),WorkRecord.Status.COMPLETED,"PROMO-V3.2")); WorkRecord c=records.save(new WorkRecord("FCST-260801-036","CAT-FROZEN-SOUTH","华南冷冻食品天气修正",south,916,704,27,LocalDate.now().plusDays(2),WorkRecord.Status.RELEASED,"WEATHER-V2.4"));
  resources.saveAll(List.of(new ResourceRegister("MODEL-ENS-051","零售需求集成模型",east,ResourceRegister.Status.RUNNING,93),new ResourceRegister("MODEL-PROMO-032","促销弹性预测模型",ec,ResourceRegister.Status.RUNNING,89),new ResourceRegister("MODEL-NPI-018","新品类比预测模型",south,ResourceRegister.Status.ALARM,74)));

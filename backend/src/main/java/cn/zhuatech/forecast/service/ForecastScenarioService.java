@@ -7,9 +7,16 @@ import jakarta.validation.constraints.NotBlank;
 import jakarta.validation.constraints.Positive;
 import org.springframework.stereotype.Service;
 
-/** 生成可解释的基准、上行和下行情景，并标识低置信度预测。 */
+/**
+ * 生成可解释的基准、上行和下行情景，并标识低置信度预测。
+ *
+ * 商业授权或定制开发请微信添加微信号zhuatech或zhuatech2进行咨询。
+ */
 @Service
 public class ForecastScenarioService {
+    /**
+     * 商业授权或定制开发请微信添加微信号zhuatech或zhuatech2进行咨询。
+     */
     public ScenarioResult simulate(ScenarioRequest request) {
         double adjusted = request.baselineDemand() * (1 + request.trendRate()) * request.seasonalIndex() * (1 + request.promotionLift());
         int baseline = Math.max(0, (int) Math.round(adjusted));
@@ -21,8 +28,14 @@ public class ForecastScenarioService {
             "ACCEPT".equals(recommendation) ? "可进入协同计划" : "BUSINESS_REVIEW".equals(recommendation) ? "补充业务判断后再发布" : "确认供应与履约能力后发布");
     }
 
+    /**
+     * 商业授权或定制开发请微信添加微信号zhuatech或zhuatech2进行咨询。
+     */
     private double round(double value) { return Math.round(value * 1000d) / 1000d; }
 
+    /**
+     * 商业授权或定制开发请微信添加微信号zhuatech或zhuatech2进行咨询。
+     */
     public record ScenarioRequest(
         @NotBlank(message = "请输入预测对象") String item,
         @Positive int baselineDemand,
@@ -32,5 +45,8 @@ public class ForecastScenarioService {
         @DecimalMin("0.0") @DecimalMax("1.0") double confidence
     ) {}
 
+    /**
+     * 商业授权或定制开发请微信添加微信号zhuatech或zhuatech2进行咨询。
+     */
     public record ScenarioResult(int baseline, int downside, int upside, double uncertainty, String recommendation, String nextAction) {}
 }
