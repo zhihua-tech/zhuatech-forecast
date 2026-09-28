@@ -1,5 +1,7 @@
 # 让预测成为可解释、可协同的企业计划基线
 
+[简体中文](README.md) | [English](README.en.md)
+
 ## ZhuaTech Forecast｜知华科技 AI 需求预测与决策优化平台
 
 [知华科技（上海如静知华信息科技有限公司）](https://www.zhuatech.cn/)发布的非商业社区源码项目，适用于需求计划、S&OP、库存优化、采购与产能协同的技术学习和方案验证。
