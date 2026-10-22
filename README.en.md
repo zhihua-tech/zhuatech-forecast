@@ -1,5 +1,9 @@
 [简体中文](README.md) | **English**
 
+## Functional update: Leakage-free rolling forecast backtest
+
+Runs a moving-average backtest using only prior observations, returning MAE, signed bias and WAPE with explicit zero-denominator handling. Available to signed-in users with editable inputs, explicit validation and JSON export. See [API, examples and limitations](docs/AI_BUSINESS_UPGRADE_20261023.md). No external model calls or automatic business changes. Existing license and contact details are retained.
+
 # ZhuaTech Forecast
 
 > A source-available enterprise project by [ZhuaTech](https://www.zhuatech.cn/) for enterprise finance, planning, settlement, and risk control.
