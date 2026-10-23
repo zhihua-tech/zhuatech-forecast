@@ -1,0 +1,63 @@
+[
+  {
+    "patch": {},
+    "expected": {
+      "decision": "PASS",
+      "normalizedMeanWidth": "#0.2"
+    },
+    "error": false
+  },
+  {
+    "patch": {
+      "inside": "89"
+    },
+    "expected": {
+      "decision": "HOLD"
+    },
+    "error": false
+  },
+  {
+    "patch": {
+      "totalWidth": "3001"
+    },
+    "expected": {
+      "decision": "REVIEW"
+    },
+    "error": false
+  },
+  {
+    "patch": {
+      "totalWidth": "3000"
+    },
+    "expected": {
+      "decision": "PASS"
+    },
+    "error": false
+  },
+  {
+    "patch": {
+      "inside": "101"
+    },
+    "expected": {},
+    "error": true
+  },
+  {
+    "patch": {
+      "actualScale": "0"
+    },
+    "expected": {},
+    "error": true
+  },
+  {
+    "patch": {
+      "observations": "1",
+      "inside": "1",
+      "totalWidth": "0"
+    },
+    "expected": {
+      "decision": "PASS",
+      "normalizedMeanWidth": "#0"
+    },
+    "error": false
+  }
+]
